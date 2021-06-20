@@ -19,7 +19,7 @@ const Clippy = (props) => {
     }, [])
     return (
     <View style={styles.container}>
-        
+
 
         {splash ? <Splash/>:<RootNavigator />}
 

@@ -4,6 +4,7 @@ import { StyleSheet, View, Animated } from "react-native";
 import { theme } from "../constants";
 
   const Block = (props)=> {
+    const extraProps = props
   const handleMargins = () => {
     const { marginSpace } = props;
     if (typeof marginSpace === "number") {
@@ -49,55 +50,53 @@ import { theme } from "../constants";
       }
     }
   }
-
   const handlePaddings = () => {
-    const { padding } = props;
-    if (typeof padding === "number") {
+    const { paddingSpace } = props;
+    if (typeof paddingSpace === "number") {
       return {
-        paddingTop: padding,
-        paddingRight: padding,
-        paddingBottom: padding,
-        paddingLeft: padding
+        paddingTop: paddingSpace,
+        paddingRight: paddingSpace,
+        paddingBottom: paddingSpace,
+        paddingLeft: paddingSpace
       };
     }
-
-    if (typeof padding === "object") {
-      const paddingSize = Object.keys(padding).length;
+    if (typeof paddingSpace === "object") {
+      const paddingSize = Object.keys(paddingSpace).length;
       switch (paddingSize) {
         case 1:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[0],
-            paddingBottom: padding[0],
-            paddingLeft: padding[0]
+            paddingTop: paddingSpace[0],
+            paddingRight: paddingSpace[0],
+            paddingBottom: paddingSpace[0],
+            paddingLeft: paddingSpace[0]
           };
         case 2:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[0],
-            paddingLeft: padding[1]
+            paddingTop: paddingSpace[0],
+            paddingRight: paddingSpace[1],
+            paddingBottom: paddingSpace[0],
+            paddingLeft: paddingSpace[1]
           };
         case 3:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[2],
-            paddingLeft: padding[1]
+            paddingTop: paddingSpace[0],
+            paddingRight: paddingSpace[1],
+            paddingBottom: paddingSpace[2],
+            paddingLeft: paddingSpace[1]
           };
         default:
           return {
-            paddingTop: padding[0],
-            paddingRight: padding[1],
-            paddingBottom: padding[2],
-            paddingLeft: padding[3]
+            paddingTop: paddingSpace[0],
+            paddingRight: paddingSpace[1],
+            paddingBottom: paddingSpace[2],
+            paddingLeft: paddingSpace[3]
           };
       }
     }
   }
 
 
-    const {
+    let {
       flex,
       row,
       column,
@@ -111,13 +110,13 @@ import { theme } from "../constants";
       shadow,
       color,
       space,
-      padding,
+      paddingSpace,
       marginSpace,
       animated,
       wrap,
       style,
       children,
-
+      ...other
     } = props;
 
     const blockStyles = [
@@ -133,26 +132,28 @@ import { theme } from "../constants";
       top && styles.top,
       bottom && styles.bottom,
       marginSpace && { ...handleMargins() },
-      padding && { ...handlePaddings() },
+      paddingSpace && { ...handlePaddings() },
       card && styles.card,
       shadow && styles.shadow,
       space && { justifyContent: `space-${space}` },
       wrap && { flexWrap: "wrap" },
       color && styles[color],
       color && !styles[color] && { backgroundColor: color },
-      // style
+      style,
     ];
+
+  
 
     if (animated) {
       return (
-        <Animated.View style={blockStyles} {...props}>
+        <Animated.View style={blockStyles} {...other}>
           {children}
         </Animated.View>
       );
     }
 
     return (
-      <View style={blockStyles} {...props}>
+      <View style={blockStyles} {...other}>
         {children}
       </View>
     );

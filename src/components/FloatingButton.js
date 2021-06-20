@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         height: theme.sizes.base4 * 2,
         borderRadius: theme.sizes.base4,
         position: "absolute",
-        bottom: 0,
+        bottom: theme.sizes.base3,
         right: theme.sizes.base4
     }
 });

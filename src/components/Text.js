@@ -42,7 +42,8 @@ import { fontNames } from "../constants/theme";
       text,
       style,
       children,
-
+      textContainerStyle,
+      ...other
     } = props;
 
     const textStyles = [
@@ -81,11 +82,12 @@ import { fontNames } from "../constants/theme";
       gray && styles.gray,
       gray && styles.text,
       gray2 && styles.gray2,
-      style
+      style,
+      textContainerStyle
     ];
 
     return (
-      <Text style={textStyles} {...props}>
+      <Text style={textStyles} {...other}>
         {children}
       </Text>
     );

@@ -9,7 +9,8 @@ const colors = {
   lightGray: "#eff2f5",
   gray: "#6F6666",
   shadow:"#000",
-  text:"#181461"
+  text:"#181461",
+  inputBackground:"#EEEEEE"
 };
 
 const sizes = {
@@ -27,7 +28,7 @@ const sizes = {
   padding3:20,
   padding4:16,
 
-  
+
 
   h1: 26,
   h2: 20,

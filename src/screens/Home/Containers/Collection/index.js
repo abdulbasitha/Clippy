@@ -7,24 +7,29 @@ import {
     TouchableOpacity
 } from "react-native";
 import { Block, Text, FloatingButton, Modal } from "../../../../components";
-import { BottomSheet } from "./layout";
+import { BottomSheet, PopUpModal } from "./layout";
 import { theme } from "../../../../constants";
 const AddCollection = (props) => {
-    const [actionModal, setActionModal] = useState(true)
+    const [actionModal, setActionModal] = useState(false)
+    const [popupModal, setPopupModal] = useState(false)
+
     return (
-        <Block flex={false}>
+        <Block flex={false} >
+            <PopUpModal
+                popupModal={popupModal}
+                setPopupModal={setPopupModal}
+            />
             <SafeAreaView>
-                <FloatingButton onPress={() => setActionModal(true)} />
+                <FloatingButton onPress={() => setPopupModal(true)} />
             </SafeAreaView>
             <BottomSheet
                 actionModal={actionModal}
-                setActionModal={setActionModal} />
+                setActionModal={setActionModal}
+            />
         </Block>
     )
 }
 export default AddCollection;
-
-
 
 
 const styles = StyleSheet.create({
