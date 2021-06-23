@@ -4,9 +4,9 @@ import { StyleSheet } from "react-native";
 import Block from "./Block";
 import { theme } from "../constants";
 
-export default class Divider extends Component {
-  render() {
-    const { color, style, ...props } = this.props;
+const  Divider =  (props)=> {
+
+    const { color, style, ...other } = props;
     const dividerStyles = [
       styles.divider,
        style,
@@ -18,11 +18,11 @@ export default class Divider extends Component {
       <Block
         color={color || theme.colors.gray2}
         style={dividerStyles}
-        {...props}
+        {...other}
       />
     );
   }
-}
+export default Divider;
 
 export const styles = StyleSheet.create({
   divider: {

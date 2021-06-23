@@ -6,7 +6,7 @@ import {
 } from "react-native";
 import { theme } from "../../../../../constants";
 import { Block, Text, FloatingButton, Modal } from "../../../../../components";
-const BottomSheet = ({actionModal, setActionModal}) => {
+const BottomSheet = ({actionModal, setActionModal, clipAction, collectionAction}) => {
     return (
 
         <Modal
@@ -16,12 +16,16 @@ const BottomSheet = ({actionModal, setActionModal}) => {
         >
             <Block center middle padding={20}>
                 <Block center>
-                    <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}>
-                        <Text secondary regular>create a Clip</Text>
+                    <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
+                    onPress={()=>clipAction()}
+                    >
+                        <Text secondary regular>Create a Clip</Text>
                     </TouchableOpacity>
                 </Block>
                 <Block center>
-                    <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}>
+                    <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
+                         onPress={()=>collectionAction()}
+                    >
                         <Text regular black>Create a collection</Text>
                     </TouchableOpacity>
                 </Block>

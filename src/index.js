@@ -8,6 +8,11 @@ import {
 import Splash from "./screens/Splash";
 import RootNavigator from './navigation'
 import { theme } from "./constants";
+import store from './services/store';
+import { Provider } from 'react-redux';
+import { persistStore, persistReducer } from 'redux-persist'
+import { PersistGate } from 'redux-persist/integration/react'
+const persistedStore = persistStore(store)
 const Clippy = (props) => {
     const [splash, setSplash] = useState(true)
     useEffect(() => {
@@ -19,10 +24,13 @@ const Clippy = (props) => {
     }, [])
     return (
     <View style={styles.container}>
-
-
-        {splash ? <Splash/>:<RootNavigator />}
-
+        {splash ? <Splash/>:
+         <Provider store={store}>
+         <PersistGate persistor={persistedStore} loading={null}>
+        <RootNavigator />
+        </PersistGate>
+        </Provider>
+        }
     </View>
     )}
 export default Clippy;

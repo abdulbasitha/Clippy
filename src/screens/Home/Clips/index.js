@@ -3,25 +3,24 @@ import {
     StyleSheet,
     TouchableOpacity
 } from "react-native";
-import { Block, Text } from "../../../components";
+import { Block, Text, Button } from "../../../components";
 import { theme } from "../../../constants";
 import { Collection } from "../Containers";
-import { EmptyView } from "./layout";
+import { EmptyView, CollectionsView } from "./layout";
+import { useDispatch, useSelector } from "react-redux";
 const Clips = ({ navigation }) => {
-
-
-
-
-return (
-    <Block >
-        <EmptyView/>
-        <Collection />
-    </Block>
-)}
+    const collections = useSelector(state => state.collection.collections)
+    return (
+        <Block >
+           <CollectionsView data={collections} />
+            <Collection />
+        </Block>
+    )
+}
 export default Clips;
 
 const styles = StyleSheet.create({
-    modelActive:{
+    modelActive: {
 
     }
 });

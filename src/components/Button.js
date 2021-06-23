@@ -3,8 +3,8 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import { theme } from "../constants";
 
-class Button extends Component {
-  render() {
+const  Button = (props) => {
+
     const {
       style,
       opacity,
@@ -17,8 +17,8 @@ class Button extends Component {
       locations,
       shadow,
       children,
-      ...props
-    } = this.props;
+      ...other
+    } = props;
 
     const buttonStyles = [
       styles.button,
@@ -52,13 +52,13 @@ class Button extends Component {
       <TouchableOpacity
         style={buttonStyles}
         activeOpacity={opacity || 0.8}
-        {...props}
+        {...other}
       >
         {children}
       </TouchableOpacity>
     );
   }
-}
+
 
 Button.defaultProps = {
   startColor: theme.colors.primary,

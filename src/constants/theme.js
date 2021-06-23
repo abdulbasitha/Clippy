@@ -4,7 +4,7 @@ const colors = {
   accent: "#EB0404",
   primary: "#7C0000",
   secondary: "#DEC87A",
-  black: "#1E1F20",
+  black: "#261C1C",
   white: "#FFFFFF",
   lightGray: "#eff2f5",
   gray: "#6F6666",
@@ -28,8 +28,7 @@ const sizes = {
   padding3:20,
   padding4:16,
 
-
-
+  
   h1: 26,
   h2: 20,
   h3: 18,
