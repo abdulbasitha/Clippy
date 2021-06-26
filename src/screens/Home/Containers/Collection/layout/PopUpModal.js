@@ -1,7 +1,6 @@
 
 import React, { useState } from "react";
 import {
-    View,
     StyleSheet,
     Alert,
     ActivityIndicator
@@ -11,9 +10,9 @@ import { Block, Text, Input, Button } from "../../../../../components";
 import DropDownPicker from 'react-native-dropdown-picker';
 import { theme } from "../../../../../constants";
 import { fontNames } from "../../../../../constants/theme";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 const mode = {
     CREATE_COLLECTION: "Create a collection",
     CREATE_ARTICLE: "Create a clip",
@@ -30,10 +29,11 @@ const PopUpModal = ({
     article,
     setArticle
 }) => {
+
     const route = useRoute();
-    const [errors, setError] = useState([])
     const [open, setOpen] = useState(false);
     const [collection_id, setCollection_id] = useState(null);
+
     const collections = useSelector(state => state.collection.collections)
     const articles = useSelector(state => state.article)
     const loading = useSelector(state => state.toast.loading)
@@ -51,8 +51,6 @@ const PopUpModal = ({
     useEffect(() => {
         setArticle({ ...article, collection_id: collection_id })
     }, [collection_id])
-
-
 
     useEffect(() => {
         setCollection_id(route.params?.collection_id)
@@ -122,46 +120,46 @@ const PopUpModal = ({
     )
 
     return (
-        <Block flex={2}>
-        <Modal
-        deviceHeight={theme.sizes.height + theme.sizes.padding * 2}
-        deviceWidth={theme.sizes.width}
-            style={styles.modalContent}
-            backdropColor={'rgba(0,0,0,0.2)'}
-            animationIn={'slideInUp'} transparent={true} isVisible={popupModal}
-        >
-            <Block center middle flex={1}  style={{
+        <Block >
+            <Modal
+                deviceHeight={theme.sizes.height + theme.sizes.padding * 2}
+                deviceWidth={theme.sizes.width}
+                style={styles.modalContent}
+                backdropColor={'rgba(0,0,0,0.2)'}
+                animationIn={'slideInUp'} transparent={true} isVisible={popupModal}
+            >
+                <Block center middle flex={1} style={{
 
-            }}>
-                <Block style={styles.modalContainer} flex={false}  >
-                    <Block flex={false} center color={theme.colors.primary} paddingSpace={10}>
-                        <Text semiBold white> {mode[formMode]}</Text>
-                    </Block>
+                }}>
+                    <Block style={styles.modalContainer} flex={false}  >
+                        <Block flex={false} center color={theme.colors.primary} paddingSpace={10}>
+                            <Text semiBold white> {mode[formMode]}</Text>
+                        </Block>
 
-                    {(formMode == "CREATE_COLLECTION" || formMode == "UPDATE_COLLECTION") && _renderCreateCollection()}
-                    {(formMode == "CREATE_ARTICLE" || formMode == "UPDATE_ARTICLE")  && _renderCreateClip()}
+                        {(formMode == "CREATE_COLLECTION" || formMode == "UPDATE_COLLECTION") && _renderCreateCollection()}
+                        {(formMode == "CREATE_ARTICLE" || formMode == "UPDATE_ARTICLE") && _renderCreateClip()}
 
-                    <Block marginSpace={[5, 0, 5, 0]} flex={false} style={{ zIndex: 0 }}>
-                        <Block row space="evenly" flex={false}>
-                            <Block >
-                                <Button onPress={() => setPopupModal(false)} style={styles.cancelButtonContainer} color={theme.colors.white}>
-                                    <Text center regular secondary>Cancel</Text>
-                                </Button>
-                            </Block>
-                            <Block>
+                        <Block marginSpace={[5, 0, 5, 0]} flex={false} style={{ zIndex: 0 }}>
+                            <Block row space="evenly" flex={false}>
+                                <Block >
+                                    <Button onPress={() => setPopupModal(false)} style={styles.cancelButtonContainer} color={theme.colors.white}>
+                                        <Text center regular secondary>Cancel</Text>
+                                    </Button>
+                                </Block>
+                                <Block>
 
-                                <Button style={styles.createButtonContainer} color={theme.colors.secondary}
-                                    disabled={loading}
-                                    onPress={() => submitForm()}
-                                >
-                                {loading ? <ActivityIndicator size="small" color={theme.colors.white}/> :  <Text center regular white style={styles.capitalize}>{formMode?.split('_')[0]}</Text>}
-                                </Button>
+                                    <Button style={styles.createButtonContainer} color={theme.colors.secondary}
+                                        disabled={loading}
+                                        onPress={() => submitForm()}
+                                    >
+                                        {loading ? <ActivityIndicator size="small" color={theme.colors.white} /> : <Text center regular white style={styles.capitalize}>{formMode?.split('_')[0]}</Text>}
+                                    </Button>
+                                </Block>
                             </Block>
                         </Block>
                     </Block>
                 </Block>
-            </Block>
-        </Modal>
+            </Modal>
         </Block>
 
 
@@ -171,8 +169,8 @@ export default PopUpModal;
 
 const styles = StyleSheet.create({
     modalContent: {
-        margin:0
-      },
+        margin: 0
+    },
     modalContainer: {
         backgroundColor: theme.colors.white,
         width: theme.sizes.width - theme.sizes.base4,
@@ -213,7 +211,7 @@ const styles = StyleSheet.create({
         margin: theme.sizes.base1,
         borderColor: theme.colors.secondary
     },
-    capitalize:{
-    textTransform: 'capitalize'
+    capitalize: {
+        textTransform: 'capitalize'
     }
 });

@@ -1,16 +1,15 @@
 import React from "react";
 import {
-    View,
     TouchableOpacity,
     StyleSheet,
     Linking,
     Alert
 } from "react-native";
 import { theme } from "../../../../constants";
-import { Block, Text, FloatingButton, Modal } from "../../../../components";
-const BottomSheet = ({data, actionModal, setActionModal, articleEditAction,  articleDeleteAction,  articleMarkAction}) => {
+import { Block, Text, Modal } from "../../../../components";
+const BottomSheet = ({ data, actionModal, setActionModal, articleEditAction, articleDeleteAction, articleMarkAction }) => {
 
-    const deleteConfirmation = (data)=> {
+    const deleteConfirmation = (data) => {
         Alert.alert(
             'Message',
             'Are you sure?',
@@ -30,28 +29,28 @@ const BottomSheet = ({data, actionModal, setActionModal, articleEditAction,  art
             <Block center middle padding={20}>
                 <Block center>
                     <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
-                    onPress={()=>Linking.openURL(data?.url)}
+                        onPress={() => Linking.openURL(data?.url)}
                     >
                         <Text secondary regular>Open in browser</Text>
                     </TouchableOpacity>
                 </Block>
                 <Block center>
                     <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
-                         onPress={()=> articleMarkAction(data)}
+                        onPress={() => articleMarkAction(data)}
                     >
-                        <Text regular black> {data?.is_read ? "Mark as unread":"Mark as read"}</Text>
+                        <Text regular black> {data?.is_read ? "Mark as unread" : "Mark as read"}</Text>
                     </TouchableOpacity>
                 </Block>
                 <Block center>
                     <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
-                         onPress={()=>articleEditAction(data)}
+                        onPress={() => articleEditAction(data)}
                     >
                         <Text regular black>Edit</Text>
                     </TouchableOpacity>
                 </Block>
                 <Block center>
                     <TouchableOpacity activeOpacity={0.5} hitSlop={hitSlop}
-                         onPress={()=>deleteConfirmation(data)}
+                        onPress={() => deleteConfirmation(data)}
                     >
                         <Text regular black>Delete</Text>
                     </TouchableOpacity>

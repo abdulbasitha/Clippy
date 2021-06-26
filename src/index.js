@@ -3,7 +3,7 @@ import Splash from "./screens/Splash";
 import RootNavigator from './navigation'
 import store from './services/store';
 import { Provider } from 'react-redux';
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Block, Toast } from "./components";
 const persistedStore = persistStore(store)
@@ -23,7 +23,7 @@ const Clippy = (props) => {
                 <Provider store={store}>
                     <PersistGate persistor={persistedStore} loading={<Splash />}>
                         <RootNavigator />
-                        <Toast/>
+                        <Toast />
                     </PersistGate>
                 </Provider>
             }

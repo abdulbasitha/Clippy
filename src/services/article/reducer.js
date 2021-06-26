@@ -1,7 +1,7 @@
 import { ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE, DELETE_ARTICLE_COLLECTION } from './actionTypes'
 
 const initialState = {
-    articles:[]
+    articles: []
 }
 export default function (state = initialState, actions) {
     switch (actions.type) {
@@ -9,10 +9,11 @@ export default function (state = initialState, actions) {
         case ADD_ARTICLE:
             return {
                 ...state,
-                articles:[...state.articles,actions.payload]
+                articles: [...state.articles, actions.payload]
             }
+
         case UPDATE_ARTICLE:
-            const { id, title, collection_id, url, photo_url, is_read,timestamp } = actions.payload;
+            const { id, title, collection_id, url, photo_url, is_read, timestamp } = actions.payload;
             const index = state.articles.findIndex(item => item.id == actions.payload.id);
             const newArray = [...state.articles];
             newArray[index].title = title
@@ -26,16 +27,18 @@ export default function (state = initialState, actions) {
                 ...state,
                 articles: newArray,
             }
-            case DELETE_ARTICLE:
-                return {
-                    ...state,
-                    articles: state.articles.filter(item => item.id != actions?.payload?.id)
-                }
-            case DELETE_ARTICLE_COLLECTION:
-                    return {
-                        ...state,
-                        articles: state.articles.filter(item => item.collection_id != actions?.payload?.id)
-                    }
+
+        case DELETE_ARTICLE:
+            return {
+                ...state,
+                articles: state.articles.filter(item => item.id != actions?.payload?.id)
+            }
+
+        case DELETE_ARTICLE_COLLECTION:
+            return {
+                ...state,
+                articles: state.articles.filter(item => item.collection_id != actions?.payload?.id)
+            }
 
         default: return state;
     }

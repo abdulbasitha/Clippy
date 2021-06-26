@@ -28,7 +28,7 @@ const sizes = {
   padding3:20,
   padding4:16,
 
-  
+
   h1: 26,
   h2: 20,
   h3: 18,
@@ -48,18 +48,8 @@ const sizes = {
 const fontNames = {
   bold:'IBMPlexSerif-Bold',
   boldItalic:'IBMPlexSerif-BoldItalic',
-  extraLight:'',
-  extraLightItalic:'',
-  italic:'',
-  light:'',
   lightItalic:'IBMPlexSerif-LightItalic',
-  medium:'',
-  mediumItalic:'',
   regular:'IBMPlexSerif-Italic',
-  semiBold:'',
-  semiBoldItalic:'',
-  thin:'',
-  thinItalic:'',
 }
 
 

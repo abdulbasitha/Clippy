@@ -1,12 +1,12 @@
 
 import { ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from './actionTypes'
-import { getLinkPreview, getPreviewFromContent } from 'link-preview-js';
-import {toastLoading, toastSuccess} from '../toast/actions'
+import { getLinkPreview } from 'link-preview-js';
+import { toastLoading, toastSuccess } from '../toast/actions'
 import { Alert } from 'react-native';
 
 
 export const addArticles = (data) => dispatch => {
-    dispatch(toastLoading({loading:true}))
+    dispatch(toastLoading({ loading: true }))
     getMetaData(data?.url).then(value => {
         dispatch({
             type: ADD_ARTICLE,
@@ -16,16 +16,16 @@ export const addArticles = (data) => dispatch => {
                 photo_url: value?.favicons[0]
             }
         })
-        dispatch(toastSuccess({title:'Success', body: 'Record added successfully'}))
-        dispatch(toastLoading({loading:false}))
+        dispatch(toastSuccess({ title: 'Success', body: 'Record added successfully' }))
+        dispatch(toastLoading({ loading: false }))
     }).catch(e => {
         Alert.alert("Message", "Invalid URL")
-        dispatch(toastLoading({loading:false}))
+        dispatch(toastLoading({ loading: false }))
     })
 
 }
 export const updateArticles = (data) => dispatch => {
-    dispatch(toastLoading({loading:true}))
+    dispatch(toastLoading({ loading: true }))
     getMetaData(data?.url).then(value => {
         dispatch({
             type: UPDATE_ARTICLE,
@@ -35,17 +35,17 @@ export const updateArticles = (data) => dispatch => {
                 photo_url: value?.favicons[0]
             }
         })
-        dispatch(toastSuccess({title:'Success', body: 'Record updated successfully'}))
+        dispatch(toastSuccess({ title: 'Success', body: 'Record updated successfully' }))
     }).catch(e => {
         Alert.alert("Message", "Invalid URL")
-        dispatch(toastLoading({loading:false}))
+        dispatch(toastLoading({ loading: false }))
     })
 }
 
 export const deleteArticles = (data) => dispatch => {
 
     dispatch({ type: DELETE_ARTICLE, payload: data })
-    dispatch(toastWarning({title:'Success', body: 'Record removed successfully'}))
+    dispatch(toastWarning({ title: 'Success', body: 'Record removed successfully' }))
 }
 
 export const getMetaData = (url) => {

@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
     TouchableOpacity,
     StyleSheet,
     Image,
     Linking,
-    FlatList,
     SectionList
 } from "react-native";
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { Block, Text, Divider } from "../../../../components";
 import { theme } from "../../../../constants";
-import * as SCREEN_NAMES from "../../../../navigation/screen_names";
+
 import { useSelector } from "react-redux";
 import { EmptyView } from ".";
 const ArticlesView = ({ longPress }) => {
@@ -18,7 +17,7 @@ const ArticlesView = ({ longPress }) => {
     const articles_not_read = useSelector(state => state.article.articles?.filter(data => data?.collection_id == route.params.collection_id && data?.is_read == false))
     const articles_red = useSelector(state => state.article.articles?.filter(data => data?.collection_id == route.params.collection_id && data?.is_read == true))
 
-    const merge =  (articles_not_read?.length || articles_red?.length ) ? [{ title: "unread", data: articles_not_read }, { title: "read", data: articles_red }] : []
+    const merge = (articles_not_read?.length || articles_red?.length) ? [{ title: "unread", data: articles_not_read }, { title: "read", data: articles_red }] : []
 
 
 
@@ -49,24 +48,23 @@ const ArticlesView = ({ longPress }) => {
         )
     }
 
-    const renderTitleStyle = (title)=> {
+    const renderTitleStyle = (title) => {
         let style;
-        if (title == "unread"){
-            style =  {display:'none'}
-        }else{
-            style = articles_red == 0 ?  {display:'none'}: styles.headerRead
+        if (title == "unread") {
+            style = { display: 'none' }
+        } else {
+            style = articles_red == 0 ? { display: 'none' } : styles.headerRead
         }
         return style;
     }
 
-    const _renderHeder = (title) =>
-    {
-        return(
-        <Block marginSpace={[10, 0, 0, 0]} style={renderTitleStyle(title)}>
-            <Text center h3 regular color={theme.colors.gray} style={renderTitleStyle(title)}>{title}</Text>
-        </Block>
-    )
-}
+    const _renderHeder = (title) => {
+        return (
+            <Block marginSpace={[10, 0, 0, 0]} style={renderTitleStyle(title)}>
+                <Text center h3 regular color={theme.colors.gray} style={renderTitleStyle(title)}>{title}</Text>
+            </Block>
+        )
+    }
 
     return (
         <Block>
@@ -78,7 +76,7 @@ const ArticlesView = ({ longPress }) => {
                 }
                 renderItem={_renderCollectionItem}
                 keyExtractor={(item, index) => index}
-                ListEmptyComponent={()=> <EmptyView/>}
+                ListEmptyComponent={() => <EmptyView />}
             />
         </Block>
     )
@@ -89,10 +87,8 @@ const styles = StyleSheet.create({
     container: {
         marginVertical: theme.sizes.padding4,
         marginHorizontal: theme.sizes.padding3,
-
     },
     dividerContainer: {
-
         marginVertical: 0,
         marginHorizontal: 0,
         width: "100%"
@@ -105,7 +101,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         textAlign: 'center',
     },
-    headerRead:{
-        marginVertical:theme.sizes.base2
+    headerRead: {
+        marginVertical: theme.sizes.base2
     }
 });

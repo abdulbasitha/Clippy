@@ -1,11 +1,10 @@
 import React from "react";
 import {
-    View,
     TouchableOpacity,
     StyleSheet
 } from "react-native";
 import { theme } from "../../../../../constants";
-import { Block, Text, FloatingButton, Modal } from "../../../../../components";
+import { Block, Text, Modal } from "../../../../../components";
 const BottomSheet = ({actionModal, setActionModal, clipAction, collectionAction}) => {
     return (
 

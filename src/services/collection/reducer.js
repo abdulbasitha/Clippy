@@ -7,14 +7,13 @@ const initialState = {
 export default function (state = initialState, actions) {
 
     switch (actions.type) {
-
         case ADD_COLLECTIONS:
             return {
                 ...state,
                 collections: [...state.collections, actions.payload]
             }
-        case UPDATE_COLLECTIONS:
 
+        case UPDATE_COLLECTIONS:
             const { id, collection_name, timestamp } = actions.payload;
             const index = state.collections.findIndex(item => item.id == actions.payload.id);
             console.log(index)
@@ -25,6 +24,7 @@ export default function (state = initialState, actions) {
                 ...state,
                 collections: newArray,
             }
+            
         case DELETE_COLLECTIONS:
             return {
                 ...state,

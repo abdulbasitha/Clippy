@@ -1,21 +1,15 @@
 import React from "react";
 import {
-  View,
-  Text,
   StyleSheet,
   StatusBar
 } from "react-native";
 import Clippy from "./src/index";
+import { Block } from "./src/components";
 const Root = (props) => (
-  <View style={styles.container}>
-     <StatusBar barStyle="light-content"/>
-    <Clippy/>
-  </View>
-  )
-export default Root;
+  <Block>
+    <StatusBar barStyle="light-content" />
+    <Clippy />
+  </Block>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
+)
+export default Root;

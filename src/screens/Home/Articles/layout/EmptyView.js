@@ -1,9 +1,4 @@
 import React from "react";
-import {
-    View,
-
-    StyleSheet
-} from "react-native";
 import { Block, Text } from "../../../../components";
 import { theme } from "../../../../constants";
 const EmptyView = (props) => (
@@ -13,10 +8,3 @@ const EmptyView = (props) => (
 )
 export default EmptyView;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
