@@ -5,5 +5,4 @@ export {
     Splash,
     Clips,
     Articles
-
 }

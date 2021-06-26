@@ -10,7 +10,7 @@ const middleware = [thunk];
 const persistConfig = {
     key: 'root',
     storage:AsyncStorage,
-    whitelist:['sd']
+    whitelist:['article','collection']
   }
 
 const persistedReducer = persistReducer(persistConfig, reducers)

@@ -1,44 +1,34 @@
-import React, {useState, useEffect} from "react";
-import {
-    View,
-    Text,
-    StyleSheet,
-    SafeAreaView
-} from "react-native";
+import React, { useState, useEffect } from "react";
 import Splash from "./screens/Splash";
 import RootNavigator from './navigation'
-import { theme } from "./constants";
 import store from './services/store';
 import { Provider } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
+import { Block, Toast } from "./components";
 const persistedStore = persistStore(store)
 const Clippy = (props) => {
-    const [splash, setSplash] = useState(true)
+    const [load, setLoad] = useState({
+        splash: true,
+        persist: true
+    })
     useEffect(() => {
-        setTimeout(()=>{
-            setSplash(false)
-        },1000)
-
-
+        setTimeout(() => {
+            setLoad({ ...load, splash: false })
+        }, 1000)
     }, [])
     return (
-    <View style={styles.container}>
-        {splash ? <Splash/>:
-         <Provider store={store}>
-         <PersistGate persistor={persistedStore} loading={null}>
-        <RootNavigator />
-        </PersistGate>
-        </Provider>
-        }
-    </View>
-    )}
+        <Block >
+            {load.splash ? <Splash /> :
+                <Provider store={store}>
+                    <PersistGate persistor={persistedStore} loading={<Splash />}>
+                        <RootNavigator />
+                        <Toast/>
+                    </PersistGate>
+                </Provider>
+            }
+        </Block>
+    )
+}
 export default Clippy;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-
-    },
-
-});

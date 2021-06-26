@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState , useLayoutEffect} from "react";
 import {
     StyleSheet,
     TouchableOpacity
@@ -9,10 +9,13 @@ import { Collection } from "../Containers";
 import { EmptyView, CollectionsView } from "./layout";
 import { useDispatch, useSelector } from "react-redux";
 const Clips = ({ navigation }) => {
+
     const collections = useSelector(state => state.collection.collections)
+
+
     return (
         <Block >
-           <CollectionsView data={collections} />
+            <CollectionsView data={collections} />
             <Collection />
         </Block>
     )
