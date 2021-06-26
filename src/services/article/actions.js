@@ -1,7 +1,7 @@
 
 import { ADD_ARTICLE, UPDATE_ARTICLE, DELETE_ARTICLE } from './actionTypes'
 import { getLinkPreview } from 'link-preview-js';
-import { toastLoading, toastSuccess } from '../toast/actions'
+import { toastLoading, toastSuccess, toastWarning } from '../toast/actions'
 import { Alert } from 'react-native';
 
 

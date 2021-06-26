@@ -57,7 +57,14 @@ const PopUpModal = ({
         setArticle({ ...article, collection_id: route.params?.collection_id })
     }, [route.params?.collection_id, articles])
 
+    useEffect(() => {
+        if (!article.collection_id && route.params?.collection_id) {
+            setArticle({ ...article, collection_id: route.params?.collection_id })
+        }
+    }, [article])
+
     const submitForm = () => {
+
         const temp_errors = []
         const { collection_name } = collection
         const { url } = article
@@ -72,11 +79,12 @@ const PopUpModal = ({
         }
         if (temp_errors.length == 0) {
             submitAction()
-            setCollection_id(route.params?.collection_id || "")
         } else {
             Alert.alert('Message', `${temp_errors.join(',')} ${temp_errors.length == 1 ? 'is required field' : 'are required fields'}`)
         }
     }
+
+
 
     const _renderCreateCollection = () => (
         <Block flex={false}>
@@ -89,7 +97,6 @@ const PopUpModal = ({
             </Block>
         </Block>
     )
-
     const _renderCreateClip = () => (
         <Block flex={false} paddingSpace={[theme.sizes.padding1, theme.sizes.padding1, 0]
         }
@@ -118,7 +125,6 @@ const PopUpModal = ({
             </Block>
         </Block>
     )
-
     return (
         <Block >
             <Modal
