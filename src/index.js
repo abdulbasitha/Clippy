@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Splash from "./screens/Splash";
-import RootNavigator from './navigation'
+import {Splash} from "./screens"
+import RootNavigator from './navigation/index'
 import store from './services/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'

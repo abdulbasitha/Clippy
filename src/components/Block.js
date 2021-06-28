@@ -94,8 +94,6 @@ import { theme } from "../constants";
       }
     }
   }
-
-
     let {
       flex,
       row,
@@ -142,7 +140,7 @@ import { theme } from "../constants";
       style,
     ];
 
-  
+
 
     if (animated) {
       return (
