@@ -9,7 +9,7 @@ import { addCollections, updateCollections } from '../../../../services/collecti
 import { addArticles, updateArticles } from '../../../../services/article/actions'
 
 
-const AddCollection = (props, ref) => {
+const AddCollection = ({}, ref) => {
 
     const initialCollection = {
         id: uuid.v4(),

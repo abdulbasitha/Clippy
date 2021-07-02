@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
     },
     container: {
-        backgroundColor: 'white',
+        backgroundColor: theme.colors.white,
         paddingTop: theme.sizes.padding2,
         paddingHorizontal: theme.sizes.padding2,
         borderTopRightRadius: theme.sizes.padding3,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         padding: theme.colors.padding1
     },
     sliderIndicator: {
-        backgroundColor: '#CECECE',
+        backgroundColor: theme.colors.sliderIndicator,
         height: 4,
         width: 45,
     },

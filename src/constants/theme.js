@@ -10,7 +10,8 @@ const colors = {
   gray: "#6F6666",
   shadow:"#000",
   text:"#181461",
-  inputBackground:"#EEEEEE"
+  inputBackground:"#EEEEEE",
+  sliderIndicator:"#CECECE"
 };
 
 const sizes = {

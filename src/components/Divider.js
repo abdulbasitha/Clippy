@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
   divider: {
     height: 0,
     margin: theme.sizes.base * 2,
-    borderBottomColor: "white",
+    borderBottomColor: theme.colors.white,
     borderBottomWidth: StyleSheet.hairlineWidth
   },
   accent: { borderBottomColor: theme.colors.accent },
