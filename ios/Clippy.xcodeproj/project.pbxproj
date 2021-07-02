@@ -22,6 +22,7 @@
 		64E980DD2629489DBE395BBE /* IBMPlexSerif-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59554BAD4A224D499570CA15 /* IBMPlexSerif-LightItalic.ttf */; };
 		652035C1E4B54923BE4FE6CE /* IBMPlexSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752FDD9155C440D5863D7B1E /* IBMPlexSerif-Bold.ttf */; };
 		6D57E27A04A54529A34EF27F /* IBMPlexSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3B727733A5D4027888C2767 /* IBMPlexSerif-Regular.ttf */; };
+		720C54DA268F00B60054B895 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720C54D9268F00B50054B895 /* BootSplash.storyboard */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9BF1415435F54767964CAE73 /* IBMPlexSerif-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB06E004B1384673A72D9F27 /* IBMPlexSerif-ThinItalic.ttf */; };
 		A05BE2B862084AB8A6A665DD /* IBMPlexSerif-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF7AD50FF0814947B5FA467E /* IBMPlexSerif-Medium.ttf */; };
@@ -59,6 +60,7 @@
 		58B7C737270946CDB00179B5 /* IBMPlexSerif-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSerif-Italic.ttf"; path = "../src/assets/fonts/IBMPlexSerif-Italic.ttf"; sourceTree = "<group>"; };
 		59554BAD4A224D499570CA15 /* IBMPlexSerif-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSerif-LightItalic.ttf"; path = "../src/assets/fonts/IBMPlexSerif-LightItalic.ttf"; sourceTree = "<group>"; };
 		60527C0D5070186190122F94 /* libPods-Clippy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Clippy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		720C54D9268F00B50054B895 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Clippy/BootSplash.storyboard; sourceTree = "<group>"; };
 		752FDD9155C440D5863D7B1E /* IBMPlexSerif-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSerif-Bold.ttf"; path = "../src/assets/fonts/IBMPlexSerif-Bold.ttf"; sourceTree = "<group>"; };
 		819E2645AE5842A9BEFF4A3B /* IBMPlexSerif-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBMPlexSerif-ExtraLight.ttf"; path = "../src/assets/fonts/IBMPlexSerif-ExtraLight.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Clippy/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				720C54D9268F00B50054B895 /* BootSplash.storyboard */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -298,6 +301,7 @@
 				02A12379FDA84368941EF502 /* IBMPlexSerif-BoldItalic.ttf in Resources */,
 				3F51975F379646BEA9BEEE58 /* IBMPlexSerif-ExtraLight.ttf in Resources */,
 				1B98F209CEA14B7687A6A832 /* IBMPlexSerif-ExtraLightItalic.ttf in Resources */,
+				720C54DA268F00B60054B895 /* BootSplash.storyboard in Resources */,
 				D34B99AF41CD455B9BD6023E /* IBMPlexSerif-Italic.ttf in Resources */,
 				F167023EADF846799553CFCF /* IBMPlexSerif-Light.ttf in Resources */,
 				64E980DD2629489DBE395BBE /* IBMPlexSerif-LightItalic.ttf in Resources */,

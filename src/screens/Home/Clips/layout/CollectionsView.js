@@ -46,11 +46,9 @@ const CollectionsView = ({ data }) => {
                 contentContainerStyle={styles.contentCenter}
                 data={data}
                 renderItem={_renderCollectionItem}
-                keyExtractor={(item, index) => index}
+                keyExtractor={(item) => item.id}
                 ListEmptyComponent={() => <EmptyView />}
             />
-
-
         </Block>
     )
 }

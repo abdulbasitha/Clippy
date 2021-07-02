@@ -1,34 +1,31 @@
-import React, { useState, useEffect } from "react";
-import {Splash} from "./screens"
+import React, { useEffect } from "react";
+
 import RootNavigator from './navigation'
 import store from './services/store';
 import { Provider } from 'react-redux';
 import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Block, Toast } from "./components";
+import RNBootSplash from "react-native-bootsplash";
 const persistedStore = persistStore(store)
 const Clippy = () => {
-    const [load, setLoad] = useState({
-        splash: true,
-        persist: true
-    })
+
     useEffect(() => {
+        RNBootSplash.show();
         setTimeout(() => {
-            setLoad({ ...load, splash: false })
+            RNBootSplash.hide();
         }, 1000)
     }, [])
     return (
         <Block >
-            {load.splash ? <Splash /> :
                 <Provider store={store}>
-                    <PersistGate persistor={persistedStore} loading={<Splash />}>
+                    <PersistGate persistor={persistedStore} >
                         <RootNavigator />
                         <Toast />
                     </PersistGate>
                 </Provider>
-            }
+
         </Block>
     )
 }
 export default Clippy;
-

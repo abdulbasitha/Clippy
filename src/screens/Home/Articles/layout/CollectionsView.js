@@ -75,7 +75,7 @@ const ArticlesView = ({ longPress }) => {
                     ({ section: { title } }) => _renderHeder(title)
                 }
                 renderItem={_renderCollectionItem}
-                keyExtractor={(item, index) => index}
+                keyExtractor={(item) => item.id}
                 ListEmptyComponent={() => <EmptyView />}
             />
         </Block>
