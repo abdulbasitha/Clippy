@@ -13,7 +13,7 @@ export default function (state = initialState, actions) {
             }
 
         case UPDATE_ARTICLE:
-            const { id, title, collection_id, url, photo_url, is_read, timestamp } = actions.payload;
+            const { title, collection_id, url, photo_url, is_read, timestamp } = actions.payload;
             const index = state.articles.findIndex(item => item.id == actions.payload.id);
             const newArray = [...state.articles];
             newArray[index].title = title

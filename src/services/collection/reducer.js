@@ -14,7 +14,7 @@ export default function (state = initialState, actions) {
             }
 
         case UPDATE_COLLECTIONS:
-            const { id, collection_name, timestamp } = actions.payload;
+            const { collection_name } = actions.payload;
             const index = state.collections.findIndex(item => item.id == actions.payload.id);
             const newArray = [...state.collections];
             newArray[index].collection_name = collection_name
