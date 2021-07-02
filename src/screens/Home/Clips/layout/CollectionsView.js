@@ -16,6 +16,7 @@ const CollectionsView = ({ data }) => {
     const articleExist = (id) => {
         return articles.filter(data => data.collection_id == id)
     }
+    const _keyExtractor = (item) => item.id;
     const _renderCollectionItem = ({ item }) => {
         let article = articleExist(item.id)
 
@@ -46,7 +47,7 @@ const CollectionsView = ({ data }) => {
                 contentContainerStyle={styles.contentCenter}
                 data={data}
                 renderItem={_renderCollectionItem}
-                keyExtractor={(item) => item.id}
+                keyExtractor={_keyExtractor}
                 ListEmptyComponent={() => <EmptyView />}
             />
         </Block>

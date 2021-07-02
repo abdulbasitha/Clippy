@@ -20,7 +20,7 @@ const ArticlesView = ({ longPress }) => {
     const merge = (articles_not_read?.length || articles_red?.length) ? [{ title: "unread", data: articles_not_read }, { title: "read", data: articles_red }] : []
 
 
-
+    const _keyExtractor = (item) => item.id;
     const _renderCollectionItem = ({ item }) => {
         return (
             <Block >
@@ -75,7 +75,7 @@ const ArticlesView = ({ longPress }) => {
                     ({ section: { title } }) => _renderHeder(title)
                 }
                 renderItem={_renderCollectionItem}
-                keyExtractor={(item) => item.id}
+                keyExtractor={_keyExtractor}
                 ListEmptyComponent={() => <EmptyView />}
             />
         </Block>
