@@ -9,15 +9,13 @@ import { Block, Toast } from "./components";
 import RNBootSplash from "react-native-bootsplash";
 const persistedStore = persistStore(store)
 const Clippy = () => {
-
     useEffect(() => {
-        RNBootSplash.show();
         setTimeout(() => {
             RNBootSplash.hide();
         }, 1000)
     }, [])
     return (
-        <Block >
+        <Block>
                 <Provider store={store}>
                     <PersistGate persistor={persistedStore} >
                         <RootNavigator />
