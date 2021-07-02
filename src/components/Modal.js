@@ -9,7 +9,6 @@ import {
     View,
     TouchableOpacity,
     TouchableWithoutFeedback,
-    Alert
 } from 'react-native';
 import { theme } from '../constants';
 import Icon from 'react-native-remix-icon';
@@ -81,7 +80,7 @@ const CustomModal = (props) => {
                     <View style={headerTittleContainer}>
                         {title &&
                             <View style={headerTittleContainer}>
-                                <Text style={styles.headerTittle}>{title}</Text>
+                                <Text style={headerTitleStyle}>{title}</Text>
                             </View>
                         }
 

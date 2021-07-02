@@ -5,7 +5,7 @@ import { Block } from "../../../components";
 import { Collection } from "../Containers";
 import { CollectionsView } from "./layout";
 import { useSelector } from "react-redux";
-const Clips = ({ navigation }) => {
+const Clips = () => {
     const collections = useSelector(state => state.collection.collections)
     return (
         <Block >

@@ -1,8 +1,5 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, {  useLayoutEffect } from "react";
 import {
-    View,
-    Text,
-    StyleSheet,
     TouchableOpacity,
     Alert
 } from "react-native";
@@ -48,10 +45,3 @@ const Header = ({editAction, deleteAction}) =>
 }
 export default Header;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});

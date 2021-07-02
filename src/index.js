@@ -7,7 +7,7 @@ import { persistStore } from 'redux-persist'
 import { PersistGate } from 'redux-persist/integration/react'
 import { Block, Toast } from "./components";
 const persistedStore = persistStore(store)
-const Clippy = (props) => {
+const Clippy = () => {
     const [load, setLoad] = useState({
         splash: true,
         persist: true

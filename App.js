@@ -1,11 +1,10 @@
 import React from "react";
 import {
-  StyleSheet,
   StatusBar
 } from "react-native";
 import Clippy from "./src/index";
 import { Block } from "./src/components";
-const Root = (props) => (
+const Root = () => (
   <Block>
     <StatusBar barStyle="light-content" />
     <Clippy />

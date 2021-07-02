@@ -1,7 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, TextInput } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
-
+import Icon from 'react-native-remix-icon';
 import Text from "./Text";
 import Block from "./Block";
 import Button from "./Button";

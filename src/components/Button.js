@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import { theme } from "../constants";

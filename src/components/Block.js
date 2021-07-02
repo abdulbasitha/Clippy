@@ -1,10 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { StyleSheet, View, Animated } from "react-native";
 
 import { theme } from "../constants";
 
   const Block = (props)=> {
-    const extraProps = props
   const handleMargins = () => {
     const { marginSpace } = props;
     if (typeof marginSpace === "number") {
